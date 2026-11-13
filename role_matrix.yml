@@ -1,0 +1,29 @@
+# role_matrix.yml - seed of built-in role permission matrix (fictional platform)
+# scope levels: site | org | self
+roles:
+  front_desk:
+    title: 前台接待
+    level: site
+    allowed:
+      front.visitor.read: site
+      front.visitor.write: site
+      front.checkin.write: site
+      space.booking.read: site
+      space.booking.write: site
+      event.read: site
+      crm.member.read_basic: site
+      kb.article.read: org
+      ai.assistant.use: self
+    denied:
+      - crm.member.read
+      - crm.member.write
+      - crm.contact.read_sensitive
+      - crm.export
+      - opp.demand.read
+      - lead.prospect.read
+      - dash.site.read
+      - dash.exec.read
+      - iam.user.read
+      - iam.role.assign
+      - sys.config.manage
+      - audit.log.read
